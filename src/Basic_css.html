@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <!-- กำหนดเอกสาร HTML เป็น HTML5 และระบุภาษาหลักเป็นภาษาไทย -->
+  <meta charset="UTF-8">
+  <!-- กำหนด encoding ของเอกสารให้รองรับภาษาไทย -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- กำหนดการแสดงผลให้เหมาะสมกับอุปกรณ์ทุกชนิด -->
+  <title>ผัดกระเพราหมูสับไข่ดาว</title>
+  <!-- กำหนดชื่อของเอกสารที่จะแสดงบนแท็บของเบราว์เซอร์ -->
+  <style>
+    /* ดึงฟอนต์ Sarabun จาก Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap');
+
+    body {
+      font-family: 'Sarabun', sans-serif; /* กำหนดฟอนต์หลักเป็น Sarabun */
+      background-color: #f8f9fa; /* กำหนดสีพื้นหลังเป็นสีเทาอ่อน */
+      color: #343a40; /* กำหนดสีตัวอักษรเป็นสีเทาเข้ม */
+      margin: 0; /* กำหนด margin รอบนอกเป็น 0 */
+      padding: 20px; /* เพิ่ม padding ด้านในของเอกสาร 20px */
+      max-width: 800px; /* กำหนดความกว้างสูงสุดของเนื้อหาไม่เกิน 800px */
+      margin: auto; /* จัดเนื้อหาให้อยู่กึ่งกลางหน้าจอ */
+      line-height: 1.8; /* กำหนดความสูงของบรรทัดเป็น 1.8 เท่าของขนาดฟอนต์ */
+    }
+    h1 {
+      font-size: 2.5rem; /* กำหนดขนาดตัวอักษรของหัวข้อ h1 */
+      text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+      color: #313539; /* กำหนดสีของข้อความ */
+      margin-bottom: 20px; /* เพิ่มช่องว่างด้านล่าง 20px */
+    }
+    img {
+      display: block; /* จัดรูปภาพให้อยู่บรรทัดเดียว */
+      margin: 10px auto 10px; /* จัดรูปภาพให้อยู่ตรงกลาง และเพิ่ม margin ด้านบนและล่าง */
+      border-radius: 12px; /* ปรับมุมของรูปภาพให้โค้งมน */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับรูปภาพ */
+      max-width: 100%; /* ป้องกันไม่ให้รูปภาพกว้างเกินขนาด container */
+      height: auto; /* กำหนดให้ความสูงปรับตามความกว้างอัตโนมัติ */
+    }
+    figcaption {
+      font-size: 0.9rem; /* กำหนดขนาดตัวอักษรในคำบรรยายภาพ */
+      text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+      color: #6c757d; /* กำหนดสีของข้อความให้เป็นสีเทาอ่อน */
+      margin-top: -5px; /* ลดช่องว่างด้านบนลง */
+      margin-bottom: 20px; /* เพิ่มช่องว่างด้านล่าง 20px */
+    }
+    h2 {
+      font-size: 1.5rem; /* กำหนดขนาดตัวอักษรของหัวข้อ h2 */
+      color: #495057; /* กำหนดสีของข้อความ */
+      margin-bottom: 15px; /* เพิ่มช่องว่างด้านล่าง 15px */
+      border-bottom: 2px solid #dee2e6; /* เพิ่มเส้นขีดใต้หัวข้อ */
+      padding-bottom: 5px; /* เพิ่ม padding ด้านล่างของหัวข้อ */
+    }
+    h3 {
+      font-size: 1.2rem; /* กำหนดขนาดตัวอักษรของหัวข้อ h3 */
+      color: #495057; /* กำหนดสีของข้อความ */
+      margin-top: 20px; /* เพิ่มช่องว่างด้านบน 20px */
+      margin-bottom: 10px; /* เพิ่มช่องว่างด้านล่าง 10px */
+    }
+    h5 {
+      text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+      font-size: 1.8rem; /* กำหนดขนาดตัวอักษร */
+      color: #313539; /* กำหนดสีของข้อความ */
+      margin-bottom: 15px; /* เพิ่มช่องว่างด้านล่าง 15px */
+    }
+    ul {
+      list-style-type: none; /* ลบ bullet point ของรายการ */
+      padding: 0; /* ลบ padding ของ ul */
+      margin: 20px 0; /* เพิ่ม margin ด้านบนและล่าง 20px */
+      display: flex; /* ใช้ Flexbox เพื่อจัดรายการแนวนอน */
+      justify-content: center; /* จัดรายการให้อยู่กึ่งกลาง */
+      gap: 20px; /* เพิ่มช่องว่างระหว่างรายการ */
+    }
+    ul li {
+      margin-bottom: 10px; /* เพิ่ม margin ด้านล่างให้กับแต่ละรายการ */
+    }
+    footer {
+      text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+      margin-top: 40px; /* เพิ่มช่องว่างด้านบน 40px */
+      font-size: 0.9rem; /* กำหนดขนาดตัวอักษรของ footer */
+      color: #adb5bd; /* กำหนดสีข้อความใน footer */
+      border-top: 1px solid #e9ecef; /* เพิ่มเส้นขอบด้านบน */
+      padding-top: 10px; /* เพิ่ม padding ด้านบน */
+    }
+    a {
+      color: #6c757d; /* กำหนดสีของลิงก์ */
+      text-decoration: none; /* ลบขีดเส้นใต้ลิงก์ */
+    }
+    a:hover {
+      text-decoration: underline; /* เพิ่มขีดเส้นใต้เมื่อชี้เมาส์ที่ลิงก์ */
+    }
+  </style>
+</head>
+<body>
+  <h5>ผัดกระเพราหมูสับไข่ดาว</h5>
+  <!-- เมนูนำทางไปยังส่วนต่าง ๆ ของเอกสาร -->
+  <ul>
+    <li><a href="#วัตถุดิบ">วัตถุดิบ</a></li>
+    <li><a href="#วิธีทำผัดกะเพราหมูสับไข่ดาวไม่สุก">วิธีทำผัดกะเพราหมูสับไข่ดาวไม่สุก</a></li>
+    <li><a href="#ตารางโภชนาการ">ตารางโภชนาการ</a></li>
+  </ul>
+
+  <!-- รูปภาพพร้อมคำบรรยาย -->
+  <figure>
+    <img src="https://i.ytimg.com/vi/MJmhXn2FpyA/maxresdefault.jpg" alt="จานผัดกระเพราหมูสับพร้อมไข่ดาว" width="450" height="300">
+    <figcaption>จานผัดกระเพราหมูสับพร้อมไข่ดาว</figcaption>
+  </figure>
+
+  <!-- ส่วนวัตถุดิบ -->
+  <h3 id="วัตถุดิบ">วัตถุดิบ</h3>
+  <ol>
+    <li>พริกชี้ฟ้า หรือพริกขี้หนู 10-15 เม็ด (เลือกความเผ็ดตามชอบ)</li>
+    <li>กระเทียม 10 เม็ด</li>
+    <li>หมูบด 250 กรัม</li>
+    <li>ผงปรุงรส 1 ช้อนชา</li>
+    <li>น้ำตาลทราย 1 ช้อนโต๊ะ</li>
+    <li>พริกไทยป่น 1/2 ช้อนชา</li>
+    <li>ซอสปรุงรส 1 ช้อนโต๊ะ</li>
+    <li>ซอสหอยนางรม 1 ช้อนโต๊ะ</li>
+    <li>ซีอิ๊วดำ 1 ช้อนชา</li>
+    <li>ใบกะเพรา 1 ถ้วย</li>
+    <li>น้ำมันพืช 2 ช้อนโต๊ะ</li>
+    <li>ไข่ไก่ หรือไข่เป็ด 1 ฟอง</li>
+    <li>ข้าวสวย 1 จาน</li>
+  </ol>
+
+  <!-- ส่วนวิธีทำ -->
+  <h3 id="วิธีทำผัดกะเพราหมูสับไข่ดาวไม่สุก">วิธีทำผัดกะเพราหมูสับไข่ดาวไม่สุก</h3>
+  <h4>STEP 1 : โขลกพริกกับกระเทียมและใส่ผงปรุงรส</h4>
+  <figure>
+    <img src="images/pic2.jpg" alt="โขลกพริกกับกระเทียม" width="450" height="300">
+    <figcaption>โขลกพริกกับกระเทียมพอละเอียด เตรียมไว้ </figcaption>
+    <figcaption>ใส่ผงปรุงรสและน้ำตาลทรายลงไปในหมูบดเล็กน้อย จากนั้นนำไปลวกจนสุก ตักขึ้นสะเด็ดน้ำพักไว้จนแห้ง</figcaption>
+  </figure>
+
+  <h4>STEP 2 : ตั้งกระทะใส่น้ำมัน เติมพริกและกระเทียม</h4>
+  <figure>
+    <img src="images/pic3.jpg" alt="ตั้งกระทะและใส่น้ำมัน" width="450" height="300">
+    <figcaption>ตั้งกระทะใส่น้ำมันลงไป พอน้ำมันร้อน ใส่พริกและกระเทียม เติมน้ำเปล่าเล็กน้อย ผัดให้เข้ากัน</figcaption>
+  </figure>
+
+  <h4>STEP 3 : ใส่หมูบดลงไปและผัดให้เข้ากัน</h4>
+  <figure>
+    <img src="images/pic4.jpg" alt="ใส่หมูบดและผัดให้เข้ากัน" width="450" height="300">
+    <figcaption>ใส่พริกไทยป่นลงไป ตามด้วยหมูบด ผัดให้เข้ากัน</figcaption>
+    <figcaption>ปรุงรสด้วยซอสปรุงรส น้ำตาลทราย ซอสหอยนางรม และซีอิ๊วดำ ชิมรสตามชอบ</figcaption>
+  </figure>
+
+  <h4>STEP 4 : ใส่ใบกระเพรา</h4>
+  <figure>
+    <img src="images/pic6.jpg" alt="ใส่ใบกะเพราลงไปผัดสักครู่" width="450" height="300">
+    <figcaption>ใส่ใบกะเพราลงไปผัดสักครู่ ปิดไฟ ตักราดบนข้าวสวย</figcaption>
+  </figure>
+
+  <h4>STEP 5 : ทอดไข่ดาว</h4>
+  <figure>
+    <img src="images/pic5.jpg" alt="ทอดไข่ดาว" width="450" height="300">
+    <figcaption>ใส่น้ำมันพืชลงในกระทะ พอน้ำมันร้อน ใส่ไข่ลงไปทอดจนสุกกรอบ เสิร์ฟพร้อมข้าว</figcaption>
+  </figure>
+
+  <!-- ตารางโภชนาการ -->
+
+  <h3 id="ตารางโภชนาการ">ตารางโภชนาการ (ต่อ 1 จาน)</h3>
+<table style="width:100%; border-collapse: collapse; margin-top: 20px;">
+  <thead style="background-color: #f1f3f5;">
+    <tr>
+      <th style="border: 1px solid #dee2e6; padding: 8px; text-align: left;">สารอาหาร</th>
+      <th style="border: 1px solid #dee2e6; padding: 8px; text-align: right;">ปริมาณ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #dee2e6; padding: 8px;">พลังงาน</td>
+      <td style="border: 1px solid #dee2e6; padding: 8px; text-align: right;">450 กิโลแคลอรี</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #dee2e6; padding: 8px;">โปรตีน</td>
+      <td style="border: 1px solid #dee2e6; padding: 8px; text-align: right;">25 กรัม</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #dee2e6; padding: 8px;">ไขมัน</td>
+      <td style="border: 1px solid #dee2e6; padding: 8px; text-align: right;">20 กรัม</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #dee2e6; padding: 8px;">คาร์โบไฮเดรต</td>
+      <td style="border: 1px solid #dee2e6; padding: 8px; text-align: right;">50 กรัม</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #dee2e6; padding: 8px;">โซเดียม</td>
+      <td style="border: 1px solid #dee2e6; padding: 8px; text-align: right;">800 มิลลิกรัม</td>
+    </tr>
+  </tbody>
+</table>
+<div class="comment-section">
+  <h4>แสดงความคิดเห็น</h4>
+  <textarea placeholder="พิมพ์ความคิดเห็นของคุณ..."></textarea>
+</div>
+<button type="button">ส่งความคิดเห็น</button>
+  <footer>
+    <p>© 2024 สูตรอาหารไทย - หรูหราและอร่อยที่สุด</p>
+    <p>ที่มา: <a href="https://cooking.kapook.com/view277590.html" target="_blank">Cooking</a></p>
+  </footer>
+</body>
+</html>

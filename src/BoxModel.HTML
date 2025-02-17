@@ -1,0 +1,96 @@
+<!DOCTYPE html> <!-- กำหนดว่าเอกสารนี้เป็น HTML5 -->
+<html lang="en"> <!-- ระบุภาษาของเอกสารเป็นภาษาอังกฤษ -->
+<head> <!-- เริ่มต้นส่วนหัวของ HTML -->
+    <meta charset="UTF-8"> <!-- กำหนดการเข้ารหัสเป็น UTF-8 เพื่อรองรับตัวอักษรพิเศษทุกประเภท -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- รองรับการแสดงผลบนมือถือ (Responsive) -->
+    <title>CSS: Box-model</title> <!-- ชื่อของแท็บในเว็บเบราว์เซอร์ -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet"> <!-- ลิงก์ไปยัง Google Fonts เพื่อใช้ฟอนต์ Sarabun -->
+    <style>
+        /* เริ่มต้นการตั้งค่าสไตล์ในส่วนของ CSS */
+
+        body { /* ตั้งค่าการแสดงผลสำหรับทั้งหน้า */
+            text-align: center; /* จัดข้อความให้อยู่กลางหน้า */
+            margin: 0; /* กำหนด margin ของ body เป็น 0 */
+            padding: 0; /* กำหนด padding ของ body เป็น 0 */
+            line-height: 1.5; /* กำหนดระยะห่างระหว่างบรรทัดเป็น 1.5 */
+        }
+
+        .container { /* กำหนดสไตล์สำหรับ div ที่มี class "container" */
+            border: 3px solid black; /* ขีดเส้นขอบรอบๆ container */
+            margin: 20px; /* กำหนดระยะห่างจากขอบของหน้าจอ */
+            padding: 20px; /* เพิ่ม padding ภายใน container */
+            max-width: 800px; /* กำหนดความกว้างสูงสุดของ container */
+            margin: 30px auto; /* ตั้งค่า margin ด้านบนและด้านล่างเป็น 30px และให้ container อยู่กลางหน้าจอในแนวนอน */
+        }
+
+        ul.menu { /* กำหนดสไตล์สำหรับรายการเมนู (ul) */
+            list-style-type: none; /* ลบสัญลักษณ์จุดที่อยู่หน้ารายการ */
+            padding: 0; /* ลบ padding ของ ul */
+            margin: 0; /* ลบ margin ของ ul */
+            border-top: 1px solid black; /* ขีดเส้นขอบด้านบนของเมนู */
+            border-bottom: 1px solid black; /* ขีดเส้นขอบด้านล่างของเมนู */
+            display: inline-block; /* จัดให้ ul อยู่ในบล็อกเดียวกัน */
+            width: 100%; /* ให้ ul ขยายเต็มความกว้าง */
+        }
+
+        ul.menu > li { /* กำหนดสไตล์สำหรับแต่ละรายการในเมนู (li) */
+            display: inline; /* ทำให้รายการเมนูแสดงในแนวนอน */
+            margin: 20px; /* เพิ่มระยะห่างระหว่างรายการเมนู */
+        }
+
+        ul.menu a { /* กำหนดสไตล์สำหรับลิงก์ (a) ในเมนู */
+            text-decoration: none; /* ลบขีดเส้นใต้จากลิงก์ */
+            color: black; /* กำหนดสีของข้อความเป็นสีดำ */
+            font-size: 18px; /* ขนาดตัวอักษรของลิงก์ */
+            font-weight: 600; /* ทำให้ตัวอักษรหนา */
+        }
+
+        a:hover { /* เมื่อเอาเมาส์ไปวางบนลิงก์ */
+            background-color: red; /* เปลี่ยนพื้นหลังเป็นสีแดง */
+        }
+
+        .images { /* กำหนดสไตล์สำหรับ div ที่ใช้จัดการรูปภาพ */
+            display: flex; /* ใช้ flexbox เพื่อจัดการกับรูปภาพในแนวนอน */
+            justify-content: center; /* จัดรูปภาพให้อยู่กลางหน้าจอ */
+            gap: 15px; /* กำหนดระยะห่างระหว่างรูปภาพ */
+            margin: 20px; /* เพิ่มระยะห่างจากขอบของหน้าจอ */
+        }
+
+        .pic { /* กำหนดสไตล์สำหรับแต่ละภาพ (img) */
+            box-sizing: border-box; /* ทำให้การคำนวณขนาดรวมถึง border และ padding */
+            width: 200px; /* กำหนดความกว้างของแต่ละภาพ */
+            border-radius: 20px; /* ทำมุมของภาพให้โค้งมน */
+        }
+
+        .description { /* กำหนดสไตล์สำหรับกล่องข้อความที่อธิบาย */
+            margin: 20px auto; /* เพิ่มระยะห่างจากขอบบนและล่าง */
+            max-width: 600px; /* กำหนดความกว้างสูงสุดของกล่องข้อความ */
+            text-align: center; /* จัดข้อความให้อยู่กลาง */
+            font-size: 16px; /* กำหนดขนาดตัวอักษร */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span>Rhythm & Masters</span></h1> <!-- ส่วนหัวของเว็บไซต์ที่ใช้ tag h1 -->
+        
+        <ul class="menu"> <!-- รายการเมนู -->
+            <li><a href="#">HOME</a></li> <!-- ลิงก์ไปยังหน้าแรก -->
+            <li><a href="#">FOR SALE</a></li> <!-- ลิงก์ไปยังหน้าสำหรับขาย -->
+            <li><a href="#">REPAIRS</a></li> <!-- ลิงก์ไปยังหน้าซ่อมแซม -->
+            <li><a href="#">ABOUT</a></li> <!-- ลิงก์ไปยังหน้าเกี่ยวกับ -->
+            <li><a href="#">CONTACT</a></li> <!-- ลิงก์ไปยังหน้าติดต่อ -->
+        </ul>
+
+        <div class="images"> <!-- แสดงภาพในแนวนอน -->
+            <img src="https://victoriapiano.com/wp-content/uploads/2019/08/Grand-Piano.jpg" class="pic"> <!-- ภาพแรก -->
+            <img src="https://www.top10.in.th/wp-content/uploads/2023/09/10-%E0%B8%81%E0%B8%B5%E0%B8%95%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%88%E0%B8%87%E0%B9%84%E0%B8%9F%E0%B8%9F%E0%B9%89%E0%B8%B2-%E0%B8%A2%E0%B8%B5%E0%B9%88%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B9%84%E0%B8%AB%E0%B8%99%E0%B8%94%E0%B8%B5.jpg" class="pic"> <!-- ภาพที่สอง -->
+            <img src="https://img.pikbest.com/wp/202404/accent-elegant-3d-image-of-a-black-drum-set-with-gold-accents_9799207.jpg!w700wp" class="pic"> <!-- ภาพที่สาม -->
+        </div>
+
+        <div class="description"> <!-- กล่องคำอธิบาย -->
+            Our shop is a professional shop that provides advice on musical instruments, pianos, drum sets, and acoustic guitars. <!-- ข้อความคำอธิบาย -->
+        </div>
+    </div>
+</body>
+</html>
